@@ -36,3 +36,18 @@ func DebugClose(closer func() error) {
 		Debug(err)
 	}
 }
+
+// Error prints to the standard logger.
+func Error(v ...interface{}) {
+	var vs []interface{}
+
+	vs = append(vs, "*ERROR*")
+	vs = append(vs, v...)
+
+	log.Println(vs...)
+}
+
+// Errorf prints formatted text to the standard logger.
+func Errorf(format string, v ...interface{}) {
+	log.Printf("*ERROR* "+format+"\n", v...)
+}

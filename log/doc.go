@@ -1,5 +1,5 @@
-// Package log provides simple logging framework using informational and debugging messages only. This package provides
-// a rolling logger also.
+// Package log provides simple logging framework using informational, error and debugging messages only. This package
+// provides a rolling logger also.
 //
 // This implementation is inspired by Dave Cheney's post:
 //   https://dave.cheney.net/2015/11/05/lets-talk-about-logging
