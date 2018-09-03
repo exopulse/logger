@@ -29,3 +29,10 @@ func Debugf(format string, v ...interface{}) {
 		log.Printf(format+"\n", v...)
 	}
 }
+
+// DebugClose invokes closer function and logs error if any. Typical use for this function is for deferring a close.
+func DebugClose(closer func() error) {
+	if err := closer(); err != nil {
+		Debug(err)
+	}
+}
