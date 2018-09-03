@@ -110,7 +110,7 @@ func Close() error {
 
 // Write writes to logger.
 func (l *Logger) Write(p []byte) (n int, err error) {
-	buf := bytes.NewBufferString(time.Now().UTC().Format("2006-01-02T15:04:05.000Z"))
+	buf := bytes.NewBufferString(time.Now().Format(time.RFC3339))
 
 	if err := buf.WriteByte(0x20); err != nil {
 		return 0, err
