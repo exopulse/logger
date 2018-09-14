@@ -3,7 +3,7 @@ package log
 import (
 	"log"
 
-	"exobyte.org/pulse/logger/debug"
+	"github.com/exopulse/logger/debug"
 )
 
 // Info prints to the standard logger.
