@@ -45,25 +45,25 @@ See "debug" package for setting debug mode on or off.
 
 ```go
 // Info prints to the standard logger.
-func Info(v ...interface{})
+func Info(v ...interface{}) {}
 
 // Infof prints formatted text to the standard logger.
-func Infof(format string, v ...interface{})
+func Infof(format string, v ...interface{}) {}
 
 // Debug prints to the standard logger, if debug mode is on.
-func Debug(v ...interface{})
+func Debug(v ...interface{}) {}
 
 // Debugf prints formatted text to the standard logger, if debug mode is on.
-func Debugf(format string, v ...interface{})
+func Debugf(format string, v ...interface{}) {}
 
 // DebugClose invokes closer function and logs error if any. Typical use for this function is for deferring a close.
-func DebugClose(closer func() error)
+func DebugClose(closer func() error) {}
 
 // Error prints to the standard logger.
-func Error(v ...interface{})
+func Error(v ...interface{}) {}
 
 // Errorf prints formatted text to the standard logger.
-func Errorf(format string, v ...interface{})
+func Errorf(format string, v ...interface{}) {}
 ```
 
 #### Install logger
@@ -78,16 +78,16 @@ This package provides means to engage/disengage debug mode and query current deb
 
 ```go
 // TurnOn engages debug mode.
-func TurnOn()
+func TurnOn() {}
 
 // TurnOff disengages debug mode.
-func TurnOff()
+func TurnOff() {}
 
 // On returns true if debug mode is on.
-func On() bool
+func On() bool {}
 
 // Off returns true if debug mode is off.
-func Off() bool
+func Off() bool {}
 ```
 
 # About the project
