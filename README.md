@@ -66,9 +66,25 @@ func Error(v ...interface{}) {}
 func Errorf(format string, v ...interface{}) {}
 ```
 
-#### Install logger
+#### Rolling logger
 
-    TODO: see debug/debug.go
+Logger functions are wrapped around lumberjack logger. Please see https://gopkg.in/natefinch/lumberjack.v2 
+
+```go
+func setupLogger() error {
+	cfg := &log.LoggerCfg{
+		Filename:        filepath.Join(logDir, "application.log"),
+		MaxSize:         5, // 5 MB
+		MaxAge:          10, // 10 days
+		MaxBackups:      3,
+		Compress:        true,
+		RotateOnStartup: true,
+		LogToConsole:    true,
+	}
+
+	return log.InstallLogger(cfg)
+}
+```
  
 ### Package debug
 
